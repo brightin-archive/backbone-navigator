@@ -30,3 +30,7 @@ The region element gets additional classes (`.back`, `.next` and `.transition`).
   &.transition
     @include transition
 ```
+
+## License
+
+Backbone Navigator is Copyright © 2013 Brightin. It is free software, and may be redistributed under the terms specified in the MIT-LICENSE file.
