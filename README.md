@@ -31,6 +31,16 @@ The region element gets additional classes (`.back`, `.next` and `.transition`).
     @include transition
 ```
 
+## Base Views
+
+Backbone Navigator uses custom views which extend the Marionette views. Views use `delegateEvents` instead of `render` when the back button is used. Marionette doesn't support delegation to sub-views, which the Navigator views add. Use:
+
+```
+Backbone.Navigator.Layout
+Backbone.Navigator.Collection
+Backbone.Navigator.Composite
+```
+
 ## License
 
 Backbone Navigator is Copyright © 2013 Brightin. It is free software, and may be redistributed under the terms specified in the MIT-LICENSE file.
