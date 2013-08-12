@@ -1,3 +1,4 @@
+#= require transition_support
 #= require region
 #= require region_wrapper
 #= require directions
