@@ -17,6 +17,9 @@ class NavigationView.Base extends Backbone.Marionette.Layout
   pushView: (view) ->
     @views.push view
 
+  replaceView: (view) ->
+    @views.replace view
+
   clearViews: ->
     @views.clear()
 
