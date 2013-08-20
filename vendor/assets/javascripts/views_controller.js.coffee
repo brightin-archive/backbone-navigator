@@ -11,10 +11,6 @@ class NavigationView.ViewsController extends Backbone.Marionette.Controller
     @views.pop()
     @triggerChange @currentView(), direction: NavigationView.directionBack
 
-  replace: (view) ->
-    @clear()
-    @push(view)
-
   push: (view) ->
     return if @currentLocation() == window.location.hash
     return @pop() if @previousLocation() == window.location.hash
