@@ -3,9 +3,10 @@ window.NavigationView ||= {}
 class NavigationView.Region extends Backbone.Marionette.Region
   show: (newView, direction) ->
     @ensureEl()
-    @setNewView newView
-    @setDirection direction
+    @setNewView(newView)
+    @setDirection(direction)
     @render()
+    @triggerEvents(newView)
 
   setNewView: (newView) ->
     @newView = new NavigationView.RegionWrapper(originalView: newView)
@@ -21,3 +22,7 @@ class NavigationView.Region extends Backbone.Marionette.Region
   animate: ->
     @newView.animateIn @direction
     @currentView?.animateOut @direction
+
+  triggerEvents: (view) ->
+    Marionette.triggerMethod.call(this, "show", view)
+    Marionette.triggerMethod.call(view, "show")
